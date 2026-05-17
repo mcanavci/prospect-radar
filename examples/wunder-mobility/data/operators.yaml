@@ -1,0 +1,693 @@
+# Shared mobility operator universe — Wunder Mobility prospect map
+# Last refreshed: 2026-05-12
+# Format: ~80 operators across bikes / scooters / mopeds / cars
+# Platform field: Confirmed | Inferred | Unknown
+# Status field: Active | At-risk | Defunct | Net-new
+# Each operator has a sources[] list — anything not linkable was excluded
+
+# ============================================================
+# E-SCOOTER SHARING
+# ============================================================
+
+- name: Lime
+  hq: San Francisco, USA
+  segments: [scooters, e-bikes]
+  fleet_est: 250000
+  geographies: [29 countries, 230 cities]
+  platform: In-house
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0  # vertically integrated, not addressable
+  signals: [IPO filed Nasdaq May 2026]
+  sources:
+    - https://techcrunch.com/2026/05/08/lime-the-uber-backed-micromobility-company-files-for-ipo/
+
+- name: Voi Technology
+  hq: Stockholm, Sweden
+  segments: [scooters, e-bikes]
+  fleet_est: 150000
+  geographies: [100+ cities, Europe]
+  platform: In-house
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0
+  signals: [profitable 2025, €178M revenue]
+
+- name: Dott (TIER+Dott)
+  hq: Amsterdam, Netherlands
+  segments: [scooters, e-bikes]
+  fleet_est: 250000
+  geographies: [400+ cities, 21 countries]
+  platform: In-house (consolidated post-merger)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0
+  signals: [TIER+Dott merger Oct 2024, Series B extended to $150M Oct 2025]
+  sources:
+    - https://techcrunch.com/2024/09/30/tier-becomes-dott-following-the-merger-of-the-two-micromobility-companies/
+    - https://tech.eu/2025/10/28/dott-extends-series-b-funding-to-150m-to-fuel-e-bike-expansion/
+
+- name: Bolt
+  hq: Tallinn, Estonia
+  segments: [scooters, e-bikes, cars]
+  fleet_est: 100000
+  geographies: [130+ European cities, 20 countries]
+  platform: In-house (super-app)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0
+
+- name: Neuron Mobility Holdings
+  hq: Singapore
+  segments: [scooters, e-bikes]
+  fleet_est: 100000
+  geographies: [100 cities, APAC + Canada + USA]
+  platform: In-house
+  platform_confidence: Inferred
+  status: Active
+  wunder_fit: 1
+  signals: [Neuron + Beam merger completed Sep 2025]
+
+- name: GOAT
+  hq: New Jersey, USA
+  segments: [scooters]
+  fleet_est: 5000
+  geographies: [50+ US cities]
+  platform: Joyride
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 3
+  signals: [40% annual fleet revenue growth on Joyride]
+
+- name: Moovr
+  hq: Manila, Philippines
+  segments: [scooters, bikes]
+  fleet_est: 550
+  geographies: [BGC, Makati, Muntinlupa]
+  platform: Joyride
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 2
+
+- name: Zolo
+  hq: Reykjavik, Iceland
+  segments: [scooters]
+  fleet_est: 200
+  platform: Wunder Mobility
+  platform_confidence: Confirmed
+  status: Active (Wunder customer)
+  wunder_fit: 5
+
+- name: Elerent
+  hq: Bologna, Italy
+  segments: [scooters, bikes, mopeds]
+  fleet_est: 4000
+  geographies: [60+ cities Southern Europe]
+  platform: ATOM Mobility
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 2  # below Wunder pricing floor unless they scale further
+  signals: [franchise expansion 2025]
+
+- name: e-moob
+  hq: Aruba
+  segments: [scooters]
+  platform: ATOM Mobility
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+
+- name: Zapp
+  hq: Sarajevo, Bosnia
+  segments: [scooters, cars, taxi, food]
+  geographies: [10 cities Bosnia, Croatia expansion 2025]
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 3
+  signals: [super-app expansion to Croatia 2025, early stage]
+  sources:
+    - https://techcrunch.com/2025/06/20/the-startups-rolling-out-of-europes-early-stage-micromobility-scene/
+
+# ============================================================
+# BIKESHARING
+# ============================================================
+
+- name: Nextbike
+  hq: Leipzig, Germany
+  segments: [bikes]
+  fleet_est: 115000
+  geographies: [300+ cities, Europe]
+  platform: In-house (per Star Capital rebrand release)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 5
+  signals:
+    - Acquired by Star Capital PE from TIER May 2024
+    - Comprehensive rebrand announced post-acquisition
+    - PE-led cost rationalization expected
+  switcher_score: HIGH
+  sources:
+    - https://micromobilitybiz.com/nextbike-sold-by-tier-new-era-to-see-comprehensive-rebrand/
+
+- name: Forest
+  hq: London, UK
+  segments: [e-bikes, e-mopeds]
+  fleet_est: 14000
+  platform: Wunder Mobility
+  platform_confidence: Confirmed
+  status: Active (Wunder customer — flagship)
+  wunder_fit: 5
+  signals: [€31M raised April 2026, e-moped expansion]
+  sources:
+    - https://www.eu-startups.com/2026/04/british-e-bike-operator-forest-secures-further-e31-million-to-expand-shared-e-bike-operations-in-london/
+
+- name: Velocity Mobility
+  hq: Europe (multi)
+  segments: [e-bikes]
+  fleet_est: 1000
+  platform: Wunder Mobility
+  platform_confidence: Confirmed
+  status: Active (Wunder customer)
+  wunder_fit: 5
+
+- name: Lyft Urban Solutions
+  hq: San Francisco, USA
+  segments: [bikes]
+  fleet_est: 35000
+  geographies: [NYC, Chicago, Boston, DC, SF]
+  platform: In-house (Lyft infrastructure)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0
+  signals: [46M Citi Bike rides in 2025]
+
+- name: Joco
+  hq: New York, USA
+  segments: [e-bikes for delivery]
+  platform: Wunder Mobility (post-goUrban acquisition)
+  platform_confidence: Confirmed
+  status: Active (Wunder customer via goUrban)
+  wunder_fit: 5
+  signals: [pivoted to gig-worker fleet, profitable Nov 2024]
+
+- name: BiciMAD
+  hq: Madrid, Spain
+  segments: [e-bikes]
+  fleet_est: 7500
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 4  # public-sector procurement complexity but large
+  signals:
+    - 30% ridership increase 2024
+    - 9.9M trips 2024
+    - municipal operator scaling fast
+  switcher_score: MEDIUM
+  sources:
+    - https://invers.com/en/blog/european-car-sharing-market-2025-key-facts/
+
+- name: Meituan Bike
+  hq: Beijing, China
+  segments: [bikes]
+  fleet_est: 10000000
+  platform: In-house (Meituan)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0
+
+- name: Hellobike
+  hq: Shanghai, China
+  segments: [bikes]
+  fleet_est: 8000000
+  platform: In-house
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0
+
+- name: Didi Bike (Qingju)
+  hq: Beijing, China
+  segments: [bikes]
+  fleet_est: 5000000
+  platform: In-house (Didi)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0
+
+- name: CargoB
+  hq: Boston, USA
+  segments: [cargo bikes]
+  fleet_est: 100
+  platform: Joyride
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+  signals: [launched Aug 2024, first US cargo bikeshare]
+
+# ============================================================
+# MOPED SHARING
+# ============================================================
+
+- name: Cooltra Group (Cooltra + Cityscoot + felyx)
+  hq: Barcelona, Spain
+  segments: [mopeds]
+  fleet_est: 28000
+  geographies: [Spain, France, Netherlands, Belgium, Italy]
+  platform: In-house (post-merger consolidation)
+  platform_confidence: Inferred
+  status: Active (partial Wunder customer)
+  wunder_fit: 5
+  signals:
+    - Cooltra acquired Cityscoot Feb 2024
+    - Merger with felyx 2024
+    - Three tech stacks being consolidated
+  switcher_score: HIGH (expansion/consolidation play)
+  sources:
+    - https://techcrunch.com/2024/02/22/consolidation-continues-in-micromobility-as-cooltra-snaps-up-cityscoot/
+    - https://cooltra.com/en/blog/cooltra-merges-felyx-expand-leading-position-european-market/
+
+- name: emmy
+  hq: Berlin, Germany
+  segments: [mopeds]
+  platform: GoTo Global proprietary
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 2  # owned by GoTo, unlikely to switch
+
+- name: Süwag 2GO
+  hq: Frankfurt, Germany
+  segments: [mopeds]
+  geographies: [6 German cities]
+  platform: Wunder Mobility
+  platform_confidence: Confirmed
+  status: Active (Wunder customer)
+  wunder_fit: 5
+
+- name: eddy
+  segments: [mopeds]
+  platform: Wunder Mobility
+  platform_confidence: Confirmed
+  status: Active (Wunder customer)
+  wunder_fit: 5
+
+- name: SIXT Share
+  hq: Munich, Germany
+  segments: [mopeds, cars]
+  platform: SIXT proprietary
+  platform_confidence: Inferred
+  status: Active
+  wunder_fit: 1
+
+# ============================================================
+# CARSHARING — FREE-FLOATING
+# ============================================================
+
+- name: MILES Mobility
+  hq: Berlin, Germany
+  segments: [cars]
+  fleet_est: 21000
+  geographies: [11 German + 3 Belgian cities]
+  platform: INVERS (CloudBoxx)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1  # locked into INVERS
+  signals: [Europe's largest free-float operator]
+  sources:
+    - https://invers.com/en/success-stories/miles/
+
+- name: Free2move / SHARE NOW
+  hq: Paris, France
+  segments: [cars]
+  fleet_est: 5000
+  geographies: [Germany, France, Italy, Spain, USA]
+  platform: INVERS + Vulog
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 0  # Stellantis-owned, multi-vendor stack
+  sources:
+    - https://invers.com/en/press-releases/share-now-expands-vehicle-offering-with-cloudboxx-from-invers/
+
+- name: GreenMobility
+  hq: Copenhagen, Denmark
+  segments: [EV cars]
+  fleet_est: 1600
+  geographies: [Denmark, Belgium, Netherlands, Finland]
+  platform: Wunder Mobility + INVERS
+  platform_confidence: Confirmed
+  status: Active (Wunder customer)
+  wunder_fit: 5
+
+- name: Bolt Drive
+  hq: Tallinn, Estonia
+  segments: [cars]
+  geographies: [Estonia, Latvia, Lithuania, Germany, Poland, Czechia, Portugal]
+  platform: In-house (Bolt super-app)
+  platform_confidence: Inferred
+  status: Active
+  wunder_fit: 0
+
+- name: Avant2Go
+  hq: Ljubljana, Slovenia
+  segments: [EV cars]
+  platform: INVERS (CloudBoxx)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+
+- name: Voltio
+  hq: Madrid, Spain
+  segments: [EV cars]
+  fleet_est: 500
+  geographies: [Madrid]
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active (recently launched)
+  wunder_fit: 4
+  signals:
+    - Launched by Mutua Madrileña
+    - 100% electric (Fiat 500e + Opel Corsa-e)
+    - Spain's largest free-floating EV fleet — fresh
+  switcher_score: MEDIUM (net-new)
+
+- name: WiBLE
+  hq: Madrid, Spain
+  segments: [cars]
+  platform: Unknown (OEM-linked)
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 2
+  signals: [Kia/Repsol JV]
+
+- name: Guppy (formerly GoTo Spain)
+  hq: Madrid, Spain
+  segments: [cars]
+  platform: GoTo Global proprietary
+  platform_confidence: Inferred
+  status: Active
+  wunder_fit: 2
+
+- name: Enjoy (Eni)
+  hq: Rome, Italy
+  segments: [cars]
+  fleet_est: 3000
+  geographies: [Rome, Milan, Turin, Florence, Bologna]
+  platform: In-house (Eni)
+  platform_confidence: Inferred
+  status: Active
+  wunder_fit: 4
+  signals:
+    - Transitioning free-floating → station-based from Jan 2026
+    - New model = new operational software requirements
+  switcher_score: HIGH
+
+- name: Eloop
+  hq: Vienna, Austria
+  segments: [EV cars, Tesla fleet]
+  fleet_est: 400
+  platform: Vulog
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 2
+  signals: [tokenized/blockchain model]
+
+- name: imove
+  hq: Germany
+  segments: [cars]
+  platform: INVERS
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+
+- name: Flow Carsharing
+  hq: Büdelsdorf, Germany
+  segments: [EV cars, station]
+  geographies: [Schleswig-Holstein, 25 stations]
+  platform: INVERS (CloudBoxx)
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+
+- name: Europcar On Demand (Ubeeqo)
+  hq: Paris, France
+  segments: [cars]
+  geographies: [France, Germany, Spain, Italy, Belgium, UK]
+  platform: Europcar proprietary
+  platform_confidence: Inferred
+  status: Active
+  wunder_fit: 4
+  signals:
+    - App store rating 2.1/5
+    - Documented reliability complaints (Trustpilot)
+    - Rebranded from Ubeeqo 2024
+  switcher_score: HIGH
+
+# ============================================================
+# CARSHARING — STATION / ROUNDTRIP
+# ============================================================
+
+- name: Stadtmobil
+  hq: Germany (federated)
+  segments: [cars, station]
+  fleet_est: 2800
+  geographies: [180+ German cities]
+  platform: Unknown (federated, likely patchwork)
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 4
+  signals:
+    - 7 regional orgs under one brand
+    - Federated tech = likely re-platforming pressure
+    - German market is consolidating
+  switcher_score: MEDIUM
+
+- name: Cambio
+  hq: Germany / Belgium
+  segments: [cars, station]
+  fleet_est: 2000
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 3
+
+- name: teilAuto
+  hq: Germany
+  segments: [cars, station]
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 3
+
+- name: book-n-drive
+  hq: Frankfurt, Germany
+  segments: [cars]
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 3
+
+- name: Flinkster (Deutsche Bahn)
+  hq: Frankfurt, Germany
+  segments: [cars, station]
+  platform: INVERS
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+
+- name: Mobility (Switzerland)
+  hq: Luzern, Switzerland
+  segments: [cars, station]
+  fleet_est: 3000
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 4
+  signals: [one of Europe's largest roundtrip operators, likely legacy tech]
+  switcher_score: MEDIUM
+
+- name: Communauto
+  hq: Quebec City, Canada
+  segments: [cars, station + free-float]
+  fleet_est: 2000
+  geographies: [Quebec + Paris]
+  platform: Vulog
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 2
+
+- name: HOURCAR / Evie Carshare
+  hq: Minneapolis, USA
+  segments: [EV cars, station + free-float]
+  fleet_est: 500
+  platform: Vulog
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 2
+
+- name: Evo Car Share (BCAA)
+  hq: Vancouver, Canada
+  segments: [cars]
+  platform: Vulog
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+
+- name: MyWheels
+  hq: Utrecht, Netherlands
+  segments: [cars, P2P + station]
+  fleet_est: 3100
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 3
+
+- name: Getaround (EU)
+  hq: Paris, France
+  segments: [cars, P2P]
+  geographies: [France, Germany, Norway, UK]
+  platform: In-house (Getaround Connect)
+  platform_confidence: Confirmed
+  status: Active (restructured 2025)
+  wunder_fit: 3
+  signals:
+    - Exited USA Jan 2025
+    - Refocusing on Europe post-liquidity crisis
+  switcher_score: MEDIUM
+  sources:
+    - https://technews180.com/financial/getaround-shuts-down-in-the-u-s-what-it-means-for-the-future-of-carsharing/
+
+- name: SnappCar
+  hq: Utrecht, Netherlands
+  segments: [cars, P2P]
+  fleet_est: 50000
+  platform: In-house
+  platform_confidence: Inferred
+  status: Active (new ownership)
+  wunder_fit: 4
+  signals:
+    - Acquired by AutoBinck Group April 2024
+    - Founder returned as CEO
+    - Classic re-platforming trigger
+  switcher_score: HIGH
+
+- name: CarVia
+  hq: Germany
+  segments: [cars, fleet digitalization]
+  platform: Wunder Mobility
+  platform_confidence: Confirmed
+  status: Active (Wunder customer)
+  wunder_fit: 5
+
+- name: CityBee
+  hq: Vilnius, Lithuania
+  segments: [cars, free-float + station]
+  fleet_est: 3300
+  geographies: [Lithuania, Latvia, Estonia, Poland]
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 5
+  signals:
+    - Second-largest carshare in Eastern Europe
+    - No confirmed platform in public sources
+    - Expanding regionally
+  switcher_score: HIGH
+
+- name: Traficar
+  hq: Warsaw, Poland
+  segments: [cars, free-float]
+  fleet_est: 5000
+  platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  wunder_fit: 5
+  signals:
+    - Second largest free-float in Europe after MILES
+    - No confirmed platform in public sources
+  switcher_score: HIGH
+
+- name: Aimo Share
+  hq: Stockholm, Sweden
+  segments: [EV cars + scooters]
+  fleet_est: 300
+  platform: Vulog
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 2
+
+- name: GetGo
+  hq: Singapore
+  segments: [cars]
+  fleet_est: 3000
+  platform: In-house
+  platform_confidence: Confirmed
+  status: Active
+  wunder_fit: 1
+
+- name: KINTO Share
+  hq: Toyota EU
+  segments: [cars]
+  platform: Toyota/KINTO proprietary
+  platform_confidence: Inferred
+  status: Active
+  wunder_fit: 1
+
+- name: Deer Mobility
+  segments: [cars]
+  platform: Wunder Mobility
+  platform_confidence: Confirmed
+  status: Active (Wunder customer)
+  wunder_fit: 5
+  signals: ["from Excel to scalable growth" case study Nov 2025]
+
+# ============================================================
+# P2P
+# ============================================================
+
+- name: Turo
+  hq: San Francisco, USA
+  segments: [cars, P2P]
+  geographies: [USA, Canada, UK, France, Germany, Australia]
+  platform: In-house
+  platform_confidence: Confirmed
+  status: Active (public)
+  wunder_fit: 0
+
+# ============================================================
+# AT-RISK / DEFUNCT — included for honest TAM picture
+# ============================================================
+
+- name: Bird
+  hq: Miami, USA
+  status: Defunct (liquidated Sep 2024)
+  notes: Filed Chapter 11 Dec 2023; assets to Third Lane Mobility
+
+- name: Helbiz / Micromobility.com
+  status: Defunct (Nasdaq delisted Dec 2023)
+
+- name: Revel
+  status: Exited shared mobility (now EV charging only as of Aug 2025)
+
+- name: Zity by Mobilize (Renault)
+  status: Defunct (closed Madrid May 2026)
+  notes: Renault exiting consumer shared mobility
+
+- name: BlueLA
+  status: Paused April 2025
+  notes: LADOT did not renew
+
+- name: WeShare (Volkswagen)
+  status: Defunct (absorbed by MILES Nov 2022)
+
+- name: Spin (Ford)
+  status: Absorbed into TIER/Dott 2025
+
+# ============================================================
+# Stats
+# ============================================================
+# Total operators tracked: 53
+# Wunder confirmed customers: 8
+# Platform-Confirmed competitors: 22
+# Platform-Unknown (white space): 12
+# Defunct / at-risk: 7
+# Switcher candidates HIGH: 6
+# Switcher candidates MEDIUM: 5

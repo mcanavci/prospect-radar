@@ -1,0 +1,148 @@
+# target.yaml — the company doing the selling
+#
+# Copy this file to config/target.yaml and fill in your company's details.
+# Everything the agents and PVP generator need to know about your offer
+# lives here. The runner injects this into every signal harvest and message
+# generation.
+#
+# Rule of thumb: be specific. "Enterprise SaaS" is useless. "Multi-tenant
+# data platform for football clubs at €40k-80k ACV with a 60-day cycle"
+# is what gets you a usable brief.
+
+company:
+  name: "Acme Mobility"
+  hq: "Hamburg, Germany"
+  founded: 2014
+  website: "https://acme.example.com"
+  short_description: >
+    Multi-tenant white-label SaaS platform for shared-mobility operators
+    (bikesharing, scooter-sharing, moped-sharing, carsharing). Handles
+    fleet ops, booking, payments, IoT integration. Customers run their own
+    brand on top.
+
+# Product surface — what you actually sell.
+products:
+  - name: "Core Platform"
+    description: "White-label operator platform. Booking, payments, fleet ops, telematics."
+    primary_buyer: "Operations leadership at shared-mobility operators"
+
+  - name: "Cross-operator Marketplace"
+    description: "Roaming layer that lets riders use multiple operators' fleets from one app."
+    primary_buyer: "CEO / business development at multi-modal operators"
+
+# ICP — who you actually sell to. Be tight.
+icp:
+  segment: "Shared-mobility operators with 500+ vehicles across one or more European cities"
+  geography:
+    - "Europe (DACH, Nordics, Iberia, Benelux, France)"
+    - "Selective expansion into LATAM and APAC via partnerships"
+  exclusions:
+    - "Operators under 400 vehicles (below pricing floor — refer to ATOM/Joyride)"
+    - "Vertically integrated giants (Lime, Voi, Bolt) — they build internally"
+    - "Pure P2P platforms (we're stronger on operator-owned fleets)"
+
+# Pricing tiers — the agents use this to estimate ACV per prospect.
+pricing:
+  floor_monthly: 5000   # EUR — Scale tier minimum
+  per_vehicle_low: 12.50
+  per_vehicle_high: 36.50
+  currency: EUR
+  notes: >
+    Per-vehicle pricing varies by fleet size and modality mix. Enterprise
+    deals with full marketplace access tend to land at the high end of the
+    per-vehicle band plus a platform fee.
+
+# Customer proof points — used by the PVP generator to match the right
+# reference to the right prospect.
+proof_points:
+  - customer: "Forest"
+    profile: "14K e-bikes, London, fastest-growing operator in the UK"
+    use_for: "Large e-bike share prospects, especially capital-city scale"
+    public_evidence: "https://forest.com / press coverage 2024-2025"
+
+  - customer: "GreenMobility"
+    profile: "1,600 EVs, 4 Nordic countries"
+    use_for: "Large EV carshare prospects with multi-country footprint"
+    public_evidence: "GreenMobility public satisfaction metrics"
+
+  - customer: "Cooltra"
+    profile: "Spain-wide moped operator, ~10K mopeds"
+    use_for: "Moped operators in Southern Europe; post-merger consolidation plays"
+    public_evidence: "Cooltra's own marketing"
+
+  - customer: "Joco"
+    profile: "NYC station-based e-bike network for delivery workers"
+    use_for: "Station-based operators, especially in dense urban markets"
+    public_evidence: "Joco public launch + press"
+
+# Buyer personas — who you actually message. The PVP generator uses this
+# to write to the right level.
+buyers:
+  - role: "CEO / Founder"
+    typical_pain: "Brand reputation hit from platform-blamed app failures"
+    typical_proof_that_lands: "Wunder absorbs engineering load while you keep the brand"
+
+  - role: "CTO / VP Engineering"
+    typical_pain: "Build-vs-buy debate; engineering team stretched thin"
+    typical_proof_that_lands: "Forest cut their internal platform engineering headcount to zero"
+
+  - role: "Director of Operations / On-Demand"
+    typical_pain: "Operational debt from legacy stack; can't ship features"
+    typical_proof_that_lands: "Migration mechanics — city-by-city, ~9 months, zero customer-facing downtime"
+
+# Deep signals — the v2 Pain Stack layer.
+#
+# These are market-specific sources beyond the standard news/jobs/reviews/
+# LinkedIn surface. They turn a brief from "this prospect is on the move"
+# into "this prospect is in strategic crisis, even if they look fine on
+# surface signals."
+#
+# Single weak signals are noise. STACKED, they segment the universe by
+# shape of pain, not firmographics.
+#
+# Examples by market:
+# - Shared mobility:  permit renewal cycles, fleet count gaps, contract losses
+# - Football SaaS:    transfer window cycles, FFP deadlines, league position deltas
+# - Compliance SaaS:  enforcement actions, audit cycles, regulator hires
+# - Real estate tech: permit databases, transaction velocity, agent migration
+#
+# Define 3-5 deep signals. The agent will check each per prospect. When
+# 3+ hit on the same prospect, the orchestrator tags it Pain Stack: HIT
+# and promotes it in the rank.
+deep_signals:
+  - name: "City permit cycle"
+    source: "EU TED API + city transport authority board minutes"
+    hit_criteria: "Prospect's operating permit expires within 12 months AND council minutes mention rider complaints or service issues in last 90 days"
+    weight: 3
+    rationale: >
+      Operators 6-12 months from renewal with surfaced complaints are in
+      strategic crisis (lose the city, lose the business). The window
+      pressures buying decisions that are normally frozen.
+
+  - name: "Review trajectory falling"
+    source: "App store + Trustpilot delta over 90 days vs prior 90 days"
+    hit_criteria: "Rating dropped 0.5+ points in 90 days"
+    weight: 2
+    rationale: >
+      A falling 3.5 is a hotter prospect than a static 2.5. Direction
+      beats level. The pain is rising in their org right now.
+
+  - name: "Fleet count gap"
+    source: "Operator-published fleet size vs city open-data deployed counts (NYC, Madrid, Berlin, London open-data portals)"
+    hit_criteria: "Claimed fleet exceeds deployed count by 20%+ AND the gap has widened over last 6 months"
+    weight: 2
+    rationale: >
+      Operators advertise fleet sizes; cities publish deployment counts.
+      A widening gap signals scale-down or reliability collapse — both
+      vendor-stack pain.
+
+# Sales motion characteristics — shapes the message generator's CTA style.
+sales_motion:
+  typical_acv_range_eur: [150000, 1500000]
+  typical_cycle_days: 90
+  buying_committee_size: 3
+  first_touch_channel_preference:
+    - "Loom-recorded brief (highest engagement)"
+    - "Cold email with specific signal hook"
+    - "LinkedIn DM if signal is LinkedIn-sourced"
+  cta_style: "Specific time ask (20 min) plus a tangible artifact (migration plan, brief, teardown)"

@@ -1,0 +1,60 @@
+# universe.yaml — your prospect universe.
+#
+# This is the knowable list of accounts you sell to. Build it from public
+# sources: your competitors' customer pages, industry case studies, market
+# coverage, conference attendee lists. Aim for ~50-500 entries for the
+# tooling to be useful. Below that, manage in a spreadsheet. Above that,
+# you're in intent-data territory.
+#
+# Each entry should have enough metadata that the signal harvesters can
+# score it without re-doing your research. Platform field matters because
+# you score "current vendor" differently from "unknown" (white space).
+
+- name: "Example Operator 1"
+  hq: "Berlin, Germany"
+  geography: ["Germany", "Austria"]
+  segment: "carshare"            # carshare | bikeshare | scootershare | mopedshare | multi-modal
+  modality: ["EV", "ICE"]
+  fleet_size_est: 1500
+  fleet_size_confidence: Inferred  # Confirmed | Inferred | Unknown
+  current_platform: "INVERS"
+  platform_confidence: Confirmed
+  status: Active                   # Active | Acquired | Wound-down | Pivot
+  fit_score: 4                     # 0-5; pre-computed Wunder-Fit (or your equivalent)
+  fit_score_rationale: "Mid-size EV carsharing in DACH — fits Scale tier"
+  notes: "Acquired by E.ON Mobility 2024-09; legacy platform decision likely in re-review."
+  sources:
+    - "https://example.com/announcement"
+    - "https://example.com/press"
+
+- name: "Example Operator 2"
+  hq: "Amsterdam, Netherlands"
+  geography: ["Netherlands", "Belgium"]
+  segment: "bikeshare"
+  modality: ["e-bike"]
+  fleet_size_est: 5000
+  fleet_size_confidence: Confirmed
+  current_platform: Unknown
+  platform_confidence: Unknown
+  status: Active
+  fit_score: 5
+  fit_score_rationale: "Mid-size e-bike network, multi-country, white-label appetite signaled in 2024 hiring"
+  notes: "Hiring 'Platform Operations Manager' as of 2026-04 — build-vs-buy signal."
+  sources:
+    - "https://example.com/operator-page"
+
+- name: "Example Operator 3 — DISQUALIFIED"
+  hq: "Mountain View, USA"
+  geography: ["USA"]
+  segment: "scootershare"
+  modality: ["scooter"]
+  fleet_size_est: 100000
+  fleet_size_confidence: Confirmed
+  current_platform: "In-house"
+  platform_confidence: Confirmed
+  status: Active
+  fit_score: 0
+  fit_score_rationale: "Vertically integrated giant — builds in-house, never buys white-label"
+  notes: "Keep in universe for awareness; do not score."
+  sources:
+    - "https://example.com/disqualified-operator"
