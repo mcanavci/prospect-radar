@@ -14,11 +14,14 @@ If you don't have these yet, prospect-radar isn't the right tool — go fix that
 ## Step 1 — Clone and install
 
 ```bash
-git clone https://github.com/<you>/prospect-radar
-cd prospect-radar
+# Clone as a new instance named after your target company
+git clone https://github.com/mcanavci/prospect-radar acme-radar
+cd acme-radar
 pip install anthropic pyyaml
 export ANTHROPIC_API_KEY=sk-ant-...
 ```
+
+The repo is the template. You clone it once per target company you want to run a radar for. Each clone becomes a self-contained instance with its own `config/`, `data/`, `scoring/`, and `output/` directories.
 
 ## Step 2 — Define your target company
 

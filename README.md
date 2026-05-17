@@ -53,35 +53,63 @@ Define your Pain Stack in `config/target.yaml > deep_signals`. The radar will ch
 
 Live one-pager: [wunder-radar.vercel.app](https://wunder-radar.vercel.app)
 
-## Setup for a new target company
+## Setup — for your own target company
 
 ```bash
-git clone https://github.com/<you>/prospect-radar
-cd prospect-radar
+# 1. Clone the repo as a new instance for your target company
+git clone https://github.com/mcanavci/prospect-radar my-company-radar
+cd my-company-radar
 
-# 1. Configure your company (the one selling)
+# 2. Configure your company (the one selling)
 cp config/target.example.yaml config/target.yaml
 $EDITOR config/target.yaml
 
-# 2. Build your prospect universe
+# 3. Build your prospect universe
 cp data/universe.example.yaml data/universe.yaml
 $EDITOR data/universe.yaml
 
-# 3. Tune the scoring rubric for your market
+# 4. Tune the scoring rubric for your market
 cp scoring/rubric.example.md scoring/rubric.md
 $EDITOR scoring/rubric.md
 
-# 4. Run
+# 5. Install deps + set API key
 pip install anthropic pyyaml
 export ANTHROPIC_API_KEY=sk-ant-...
-python run.py --weekly         # produces output/YYYY-MM-DD-top-10.md
-python run.py --account "ACME" # ad-hoc brief for one account
+```
 
-# 5. (Optional) Deploy a public one-pager
+A new instance takes a focused user ~half a day to set up. The technical part is fast; the work is in `target.yaml` and `universe.yaml` — that's where your GTM thinking lands.
+
+## Daily usage — two interfaces
+
+**Option A: Claude Code slash command (recommended for daily use)**
+
+From inside your radar instance directory:
+
+```
+/radar "Acme Corp"     # Ad-hoc brief for one prospect
+/radar weekly          # Full universe sweep, top-10 brief
+/radar help            # Usage
+```
+
+The slash command ships with the repo at `.claude/commands/radar.md` — Claude Code picks it up automatically when you open the project.
+
+**Option B: Python CLI (for cron / non-Claude-Code workflows)**
+
+```bash
+python run.py --prospect "Acme Corp"           # Ad-hoc brief
+python run.py --prospect "New Co" --add-to-universe  # Brief + append to universe
+```
+
+The weekly sweep currently runs via `/prompts/run.md` in Claude Code. You can wire it to cron by wrapping it in your own shell script that invokes `claude` headlessly.
+
+## (Optional) Deploy a public one-pager
+
+```bash
+npm install -g vercel
 vercel deploy
 ```
 
-A new Radar should take a focused user ~half a day to stand up.
+See [docs/deploying-to-vercel.md](docs/deploying-to-vercel.md) for the details + privacy tradeoffs (public deploy vs password-protected).
 
 ## What goes in each file
 
